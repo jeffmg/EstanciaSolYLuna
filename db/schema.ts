@@ -1,0 +1,2 @@
+import {sqliteTable,text,real,primaryKey} from 'drizzle-orm/sqlite-core';
+export const records=sqliteTable('records',{id:text('id').notNull(),owner:text('owner').notNull(),kind:text('kind').notNull(),name:text('name').notNull(),amount:real('amount').notNull(),date:text('date').notNull(),apartment:text('apartment').notNull(),note:text('note').notNull().default(''),file_key:text('file_key'),file_name:text('file_name')},t=>[primaryKey({columns:[t.owner,t.id]})]);
